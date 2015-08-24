@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="basic.css" />
+    </head>
+    <body>
+        <div class="rect">
+            <div class="rect1"></div>
+            <div class="rect2"></div>
+            <div class="rect3"></div>
+            <div class="rect4"></div>
+            <div class="rect5"></div>
+        </div>
+        <!--            <img src="../musicDemo/musicbg.png" />-->        
+        <div class="listen">
+            <div class="histogram">
+                <div class="htg1"></div>
+                <div class="htg2"></div>
+                <div class="htg3"></div>
+                <div class="htg4"></div>
+                <div class="htg5"></div>
+                <div class="htg6"></div>
+            </div>
+            <div>
+                <div class="cicle"></div>
+            </div>
+            <div style="color:white;">
+                <a>asd</a>
+                <a>qwe</a>
+                <a>123</a>
+                <a>ghj</a>
+                <div id='text'></div>
+            </div>
+        </div>
+        <div class="channel"></div>
+        <div class="lbtn"><span class="lbtnw">换台</span></div>
+        <div class="rbtn"><span class="rbtnw">返回</span></div>
+    </body>
+    <script src="jquery-1.11.1.min.js"></script>
+    <script src="music.js"></script>
+    <script>
+            var list = $("a");
+            for(var i = 0; i < list.length; i++){
+                $("a").eq(i).bind("click", function(){
+                    $("#text").text($("a").eq(0).text());
+                });
+            }
+    </script>
+</html>

@@ -1,0 +1,11 @@
+
+.drawing {
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+}
+
+.select {
+    margin-top: 15px;
+    display: block;  
+}

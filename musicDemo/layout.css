@@ -1,0 +1,12 @@
+* {padding: 0; margin: 0;}
+body {background-image: -webkit-linear-gradient(left, #0079E5, #66D9EF);}
+html {overflow: hidden;}
+/*.main {position: relative; left: 0px; margin-top: 30px; opacity: 0.7; transition: left 800ms ease;}*/
+.lbtn {position: absolute; right: 0; top: 200px; width: 115px; height: 275px; background-color: black; opacity: 0;}
+.lbtnw {position: absolute; right: 0px; top: 122px; margin-right: 20px;}
+.rbtn {position: absolute; left: 0; top: 200px; width: 115px; height: 275px; background-color: black; opacity: 0;}
+.rbtnw {position: absolute; left: 0px; top: 122px; margin-left: 20px;}
+.lbtn:HOVER {opacity: 0.3;}
+.rbtn:HOVER {opacity: 0.3;}
+.listen {position: absolute; width: 1366px; height: 500px; left: 0px; margin-top: 30px; transition: left 800ms ease; opacity: 0.5;}
+.channel {position: absolute; width: 1366px; height: 500px; left: 1366px; margin-top: 30px; transition: left 800ms ease; opacity: 0.8;}

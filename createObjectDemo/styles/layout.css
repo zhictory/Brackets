@@ -1,0 +1,100 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    background: transparent url(../images/bg.png) no-repeat top right;
+}
+
+header {
+    margin: 15px;
+    width: 280px;
+    text-shadow: 0px 2px 3px #666;
+}
+
+nav {
+    margin: 15px;
+}
+
+.outline2 {
+    border: 5px inset #84b8ff;
+    margin: 15px;
+}
+
+.search {
+    width: 250px;
+}
+
+.search-submit {
+    display: none;
+}
+
+.search-field {
+    background: #fff url(../images/search-icon.png) no-repeat;
+    background-size: 28px 28px;
+    background-position: 5px 5px;
+    border: 1px solid #919090;
+    height: 36px;
+    cursor: pointer;
+    padding: 0 0 0 34px;
+    position: relative;
+    transition: width 600ms ease, background 600ms ease;
+    width: 0px;
+}
+
+.search-field:HOVER {
+    width: 250px;
+}
+
+nav ul {
+    width: 250px;
+    margin-top: 15px;
+}
+
+nav ul li:HOVER {
+    text-shadow: 0 0 2px #5D5F60;
+}
+
+nav ul li{
+    width: 250px;
+    margin: 5px 5px 5px 0px;
+    list-style-type: none;
+    cursor: pointer;    
+}
+
+nav ul li div {
+    float: left;
+    margin: 3px 8px 2px 2px;
+    width: 12px;
+    height: 12px;
+    border: 1px solid;
+    background-image: -webkit-radial-gradient(left, #0079E5, #66D9EF);
+    background-image: -moz-radial-gradient(left, #0079E5, #66D9EF);
+    background-image: -ms-radial-gradient(left, #0079E5, #66D9EF);
+    border-radius: 50%;
+}
+
+.title {
+    margin: 15px;
+}
+
+pre {
+    margin: 15px;
+    padding: 15px;
+}
+
+.p {
+    margin: 15px;
+}
+
+.p p {
+    margin: 5px;
+}
+
+footer {
+    margin: 30px auto 30px;
+    padding: 5px;
+    border-top: 1px solid;
+    width: 220px;
+}

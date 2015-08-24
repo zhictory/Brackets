@@ -1,0 +1,37 @@
+
+.run{
+    width: 90px;
+    height: 50px;
+    background: url(run.png) no-repeat 0 0;
+    -webkit-animation: run 350ms steps(5) infinite 0s;
+    -webkit-animation-direction: normal;
+    -webkit-animation-play-state: running;
+    -webkit-animation-fill-mode: both;
+}
+/*
+@-webkit-keyframes run {	
+    0% {
+        background-position:0;
+    }
+    20% {
+       background-position:-90px 0;
+    }
+    40% {
+       background-position:-180px 0;
+    }
+    60% {
+       background-position:-270px 0;
+    }
+    80% {
+       background-position:-360px 0;
+    }
+    100% {
+       background-position:-450px 0;
+    }
+}
+*/
+@-webkit-keyframes run {
+    100% {
+        background-position: -450px 0;
+    }
+}

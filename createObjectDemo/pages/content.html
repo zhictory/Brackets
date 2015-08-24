@@ -1,0 +1,219 @@
+<div id="content1">
+    <div class="title">工厂模式</div>
+    <div class="content">
+        <pre>
+function createPerson(name, age, job){
+    var o = new Object();
+    o.name = name;
+    o.age = age;
+    o.job = job;
+    o.sayName = function(){
+        alert(this.name);
+    }
+    return o;
+}
+
+var person1 = createPerson("Nicholas", 29, "Software Engineer");
+var person2 = createPerson("Greg", 27, "Doctor");                    
+        </pre>
+    <div class="p">
+        <p>考虑到 JavaScript 中无法创建类，用特定的函数来封装以特定接口创建对象的细节。</p>
+        <p>工厂模式的优点：解决了创建多个相似对象的问题。</p>
+        <p>工厂模式的缺点：没有解决对象识别的问题（即知道一个对象的类型）。</p>                    
+    </div>
+    </div>
+</div>
+
+<div class="title">工厂模式</div>
+<div class="content">
+    <pre>
+function createPerson(name, age, job){
+    var o = new Object();
+    o.name = name;
+    o.age = age;
+    o.job = job;
+    o.sayName = function(){
+        alert(this.name);
+    }
+    return o;
+}
+
+var person1 = createPerson("Nicholas", 29, "Software Engineer");
+var person2 = createPerson("Greg", 27, "Doctor");                    
+    </pre>
+<div class="p">
+    <p>考虑到 JavaScript 中无法创建类，用特定的函数来封装以特定接口创建对象的细节。</p>
+    <p>工厂模式的优点：解决了创建多个相似对象的问题。</p>
+    <p>工厂模式的缺点：没有解决对象识别的问题（即知道一个对象的类型）。</p>                    
+</div>
+</div>
+
+<div id="content2">
+    <div class="title">构造函数模式</div>
+    <div class="content">
+        <pre>
+function Person(name, age, job){
+    this.name = name;
+    this.age = age;
+    this.job = job;
+    this.sayName = sayName;
+}
+
+function sayName(){
+    alert(this.name);
+}
+
+var person1 = new Person("Nicholas", 29, "Software Engineer",);
+var person2 = new Person("Greg", 27, "Doctor");                 
+        </pre>
+    <div class="p">
+        <p>构造函数模式的优点：创建自定义的构造函数意味着将来可以将它的实例标识作为一种特定的类型。</p>
+        <p>构造函数模式的缺点：每个方法都要在每个实例上重新创建一遍。</p>
+        <p>在全局作用域中调用一个函数时，this 对象总是指向 Global 对象（在浏览器中就是window对象）。</p>
+        <p>任何函数，只要通过 new 操作符来调用，那它就可以作为构造函数；任何函数，如果不通过 new 操作符，那它跟普通函数一样。</p>
+        <p>以 new 操作符方式调用构造函数会经历4个步骤：1.创建一个新对象，2.将构造函数的作用域赋给新对象，3.执行构造函数中的代码，4.返回新对象。</p>
+    </div>
+    </div>
+</div>
+
+<div id="content3">
+    <div class="title">原型模式</div>
+    <div class="content">
+        <pre>
+function Person(){
+}
+
+Person.prototype.name = "Nicholas";
+Person.prototype.age = 29;
+Person.prototype.job = "Software Engineer";
+Person.prototype.sayName = function(){
+    alert(this.name);
+};
+
+var person1 = new Person();
+var person2 = new Person();
+alert(person1.sayName == person2,satName); <span>//true</span>
+    </pre>
+    <div class="p">
+        <p>要理解原型模式的工作原理，必须先理解ECMAScript中原型对象的性质。</p>
+        <p>当调用构造函数创建一个实例后，这个实例获得一个指向该构造函数的原型对象的指针，即[[Prototype]]。</p>
+        <p>[[Prototype]]在Safari、Chrome、FireFox的每个对象中用属性_proto_表示。</p>
+        <p>访问[[Prototype]]：isPrototypeOf()、Object.getPrototypeOf()。</p>
+        <p>判断访问的是实例属性还是原型属性：hasOwnProperty()、in操作符。</p>
+        <p>所有开发人员定义的属性都是可枚举的，即原型中的[[Enumerable]]属性为true。</p>
+        <p>获得对象上所有可枚举的实例属性：Object.keys()。</p>
+        <p>可以用一个包含所有属性和方法的对象字面量来重写整个原型对象。</p>
+        <p>重设构造函数：Object.defineProperty(Person.prototype, "constructor", {enumerable:false, value:Person})。</p>
+        <p>在原型对象中查找值的过程都是一次搜索，所以在原型对象所做的任何修改都能立即从实例上反映出来（除了重写原型对象的情况外）。</p>
+        <p>原生对象也是通过原型模式创建的（但不推荐修改原生对象的原型）。</p>
+        <p>原型模式的缺点：1、无法传递初始化参数，2、由共享的本性导致的实例无法拥有自己的引用类型属性。</p>
+        <p>原型模式的优点：所有对象实例共享其原型对象所包含的属性和方法。</p>
+        <p>如果我们在实例中添加了一个属性，而该属性与实例原型中的一个属性同名，那我们就在实例中创建该属性，该属性将会屏蔽原型中的那个属性。</p>
+    </div>
+    </div>    
+</div>
+
+<div id="content4">
+    <div class="title">组合使用构造函数模式和原型模式</div>
+    <div class="content">
+        <pre>
+function Person(name, age, job){
+    this.name = name;
+    this.age = age;
+    this.job = job;
+    this.friends = ["Shelby", "Court"];
+}
+Person.prototype = {
+    constructor : Person,
+    sayName : function(){
+        alert(this.name);
+    }
+};
+var person1 = new Person("Nicholas", 29, "Software Engineer");
+var person2 = new Person("Greg", 27, "Doctor");
+person1.friends.push("Van");
+alert(person1.friends); <span>//"Shelby, Count, Van"</span>
+alert(person2.friends); <span>//"Shelby, Count"</span>
+alert(person1.friends === person2.friends); <span>//false</span>
+alert(person1.sayName === person2.sayName); <span>//true</span>           
+        </pre>
+    <div class="p">
+        <p>创建自定义类型最常见的方式。</p>
+        <P>组合的优点：每个实例都会有自己的一份实例属性的副本，但同时又共享着对方法的引用，最大限度的节省了内存，也支持传递参数。</P>      
+    </div>
+    </div>    
+</div>
+
+<div id="content5">
+    <div class="title">动态原型模式</div>
+    <div class="content">
+        <pre>
+function Person(name, age, job){
+    this.name = name;
+    this.age = age;
+    this.job = job;
+    if(typeof this.sayName != "function"){
+        Person.prototype.sayName = function(){
+            alert(this.name)
+        };
+    }
+}
+
+var friend = new Person("Nicholas", 29, "Software Engineer");
+friend.sayName(); <span>//"Nicholas"</span>
+        </pre>
+    <div class="p">
+        <p>不同于但优于组合模式，动态原型模式将原型模式封装在构造函数中，而通过在构造函数中初始化原型（仅在必要的情况下），又保持同时使用构造函数和原型的特点。</p>
+        <p>对于采用这个模式创建的对象，可以用 instanceof 操作符确定它的类型。</p>
+        <p>使用动态原型模式时，不能使用对象字面量重写原型，因为会切断实例和新原型之间的联系。</p>                    
+    </div>
+    </div>    
+</div>
+
+<div id="content6">
+    <div class="title">寄生构造函数模式</div>
+    <div class="content">
+        <pre>
+function Person(name, age, job){
+    var o = new Object();
+    o.name = name;
+    o.age = age;
+    o.job = job;
+    o.sayName = function(){
+        alert(this.name);
+    };
+    return o;
+}
+
+var friend = new Person("Nicholas", 29, "Software Engineer");
+friend.sayName(); <span>//"Nicholas"</span>
+        </pre>
+    <div class="p">
+        <p>与构造函数模式类型，这种模式的基本思想是创建一个函数，该函数的作用仅仅是封装创建对象的代码，然后再返回新创建的对象。</p>
+        <p>构造函数在不返回值的情况下，默认会返回新对象实例。而通过在构造函数的末尾添加一个return语句，可以重写调用构造函数时返回的值。</p>
+        <p>通过寄生构造函数模式返回的对象与在构造函数外部创建的对象一样，不能依赖 instanceof 操作符来确定对象类型。</p>
+        <p>这个模式可以在特殊的情况下用来为对象创建构造函数（例如，想创建一个具有额外方法的数组，但不能直接修改Array构造函数，这里就可以使用这个模式）。</p>                    
+    </div>
+    </div>    
+</div>
+
+<div id="content7">
+    <div class="title">稳妥构造函数模式</div>
+    <div class="content">
+        <pre>
+function Person(name, age, job){
+    var o = new Object();
+    o.sayName = function(){
+        alert(name);
+    };
+    return o;
+}
+        </pre>
+    <div class="p">
+        <p>稳妥对象指的是没有公共属性，其方法也不引用 this 的对象。</p>
+        <p>稳妥构造函数模式有两个特点：1.新创建对象的实例方法不使用 this，2.不使用 new 操作符调用构造函数。</p>
+        <p>即使有其他代码会给对象添加方法或数据成员，但也不可能有别的办法访问传入到构造函数的原始数据。</p>
+        <p>稳妥函数提供的这种安全性，使得它非常适合用在某些安全执行环境。</p>                    
+    </div>
+    </div>    
+</div>

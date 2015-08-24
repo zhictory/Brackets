@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>createObject</title>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" href="../styles/basic.css" />
+    </head>
+    <body>
+        <div class="outline1">
+            <header>创建对象的模式</header>
+            <nav>
+                <div class="search">
+                    <form action="http://www.baidu.com/baidu" target="_blank">
+                        <input type="text" name="word" class="search-field" placeholder="search..."/><input type="submit" value="search" class="search-submit"/>
+                    </form>
+                </div>
+                <ul>
+                    <li><div></div>工厂模式</li>
+                    <li><div></div>构造函数模式</li>
+                    <li><div></div>原型模式</li>
+                    <li><div></div>组合使用构造函数模式和原型模式</li>
+                    <li><div></div>动态原型模式</li>
+                    <li><div></div>寄生构造函数模式</li>
+                    <li><div></div>稳妥构造函数模式</li>
+                </ul>
+            </nav>
+        </div>
+        <div class="outline2">
+            <div class="title">工厂模式</div>
+            <div class="content">
+                <pre>
+function createPerson(name, age, job){
+    var o = new Object();
+    o.name = name;
+    o.age = age;
+    o.job = job;
+    o.sayName = function(){
+        alert(this.name);
+    }
+    return o;
+}
+
+var person1 = createPerson("Nicholas", 29, "Software Engineer");
+var person2 = createPerson("Greg", 27, "Doctor");                    
+                </pre>
+                <div class="p">
+                    <p>考虑到 JavaScript 中无法创建类，用特定的函数来封装以特定接口创建对象的细节。</p>
+                    <p>工厂模式的优点：解决了创建多个相似对象的问题。</p>
+                    <p>工厂模式的缺点：没有解决对象识别的问题（即知道一个对象的类型）。</p>                    
+                </div>
+            </div>
+        </div>
+        <footer>
+            @CopyRight | zhictory | 2015.01.14
+        </footer>
+    </body>
+    <script src="../scripts/jquery-1.11.1.min.js"></script>
+    <script src="../scripts/createObject.js"></script>
+</html>

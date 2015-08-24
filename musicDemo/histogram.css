@@ -1,0 +1,48 @@
+.htg1, .htg2, .htg3, .htg4, .htg5, .htg6 {
+    height: 100px;
+    width: 20px;
+    background-color: yellow;
+    margin: 0px 10px;
+    float: left;
+}
+
+.htg1 {height: 1px;}
+.htg2 {height: 1px;}
+.htg3 {height: 1px;}
+.htg4 {height: 1px;}
+.htg5 {height: 1px;}
+.htg6 {height: 1px;}
+
+.htg1 {-webkit-animation: htg1 500ms ease-out 500ms 1 forwards;}
+.htg2 {-webkit-animation: htg2 500ms ease-out 400ms 1 forwards;}
+.htg3 {-webkit-animation: htg3 500ms ease-out 300ms 1 forwards;}
+.htg4 {-webkit-animation: htg4 500ms ease-out 200ms 1 forwards;}
+.htg5 {-webkit-animation: htg5 500ms ease-out 100ms 1 forwards;}
+.htg6 {-webkit-animation: htg6 500ms ease-out 0ms 1 forwards;}
+
+@-webkit-keyframes htg1 {100%{height:20px;}}
+@-webkit-keyframes htg2 {100%{height:70px;}}
+@-webkit-keyframes htg3 {100%{height:40px;}}
+@-webkit-keyframes htg4 {100%{height:10px;}}
+@-webkit-keyframes htg5 {100%{height:80px;}}
+@-webkit-keyframes htg6 {100%{height:20px;}}
+
+.histogram {
+    height: 100px;
+    width: 240px;
+    margin: 30px 30px 0px;
+    transform: rotate(180deg);
+    border-right: 3px solid white;
+    border-top: 3px solid white;
+}
+
+.cicle {
+    height: 1px;
+    width: 1px;
+    margin: 30px 30px 0px;
+    background-color: yellow;
+    border-radius: 50%;
+    -webkit-animation: cicle1 500ms ease-out 600ms 1 forwards;
+}
+
+@-webkit-keyframes cicle1 {100%{height: 150px; width: 150px;}}
