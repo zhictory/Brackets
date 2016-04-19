@@ -2,18 +2,61 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name='apple-itunes-app' content='app-id=477927812'> 
-	<title>App</title>
+	<meta name='apple-itunes-app' content='app-id=1011663719'>
+	<title>App下载检测</title>
 	<style>
-
+	* {
+		margin: 0;
+		padding: 0;
+	}
+	.app-banner {
+		position: fixed;
+		bottom: 0;
+		z-index: 99;
+		width: 100%;
+		height: 100px;
+		background: rgba(0,0,0,.7);
+	}
+	.link-btn {
+		float: right;
+		display: block;
+		margin-right: 10px;
+		margin-top: 10px;
+		width: 100px;
+		height: 80px;
+		background: #fff;
+		color: #333;
+		font-size: 32px;
+		line-height: 80px;
+		text-align: center;
+		text-decoration: none;
+	}
 	</style>
 </head>
 <body>
 	<div>
-		sdfajsdlfjasdljf;kdsljf;lkjsdflkjsdflkjsdflkjsdfl;kjsdflk;sajfkajskdfsdfajsdlfjasdljf;kdsljf;lkjsdflkjsdflkjsdflkjsdfl;kjsdflk;sajfkajskdfsdfajsdlfjasdljf;kdsljf;lkjsdflkjsdflkjsdflkjsdfl;kjsdflk;sajfkajskdfsdfajsdlfjasdljf;kdsljf;lkjsdflkjsdflkjsdflkjsdfl;kjsdflk;sajfkajskdfsdfajsdlfjasdljf;kdsljf;lkjsdflkjsdflkjsdflkjsdfl;kjsdflk;sajfkajskdfsdfajsdlfjasdljf;kdsljf;lkjsdflkjsdflkjsdflkjsdfl;kjsdflk;sajfkajskdfsdfajsdlfjasdljf;kdsljf;lkjsdflkjsdflkjsdflkjsdfl;kjsdflk;sajfkajskdfsdfajsdlfjasdljf;kdsljf;lkjsdflkjsdflkjsdflkjsdfl;kjsdflk;sajfkajskdfsdfajsdlfjasdljf;kdsljf;lkjsdflkjsdflkjsdflkjsdfl;kjsdflk;sajfkajskdfsdfajsdlfjasdljf;kdsljf;lkjsdflkjsdflkjsdflkjsdfl;kjsdflk;sajfkajskdfsdfajsdlfjasdljf;kdsljf;lkjsdflkjsdflkjsdflkjsdfl;kjsdflk;sajfkajskdfsdfajsdlfjasdljf;kdsljf;lkjsdflkjsdflkjsdflkjsdfl;kjsdflk;sajfkajskdfsdfajsdlfjasdljf;kdsljf;lkjsdflkjsdflkjsdflkjsdfl;kjsdflk;sajfkajskdf
+		<a href="jinhaima://kinhomapp">打开app</a><br/>
+	</div>
+	<div id="J_appBanner" class="app-banner">
+		<a class="link-btn" id="applink1" onclick="openApp()">Open</a>
 	</div>
 </body>
 	<script>
-
+	if(navigator.userAgent.indexOf("iPhone")>-1&&navigator.userAgent.indexOf("Safari")>-1){
+		document.getElementById("J_appBanner").style.display = "none";
+	}
+	function openApp() {
+        if (/android/i.test(navigator.userAgent)) {  
+			alert();
+			var isrefresh = getUrlParam('refresh'); // 获得refresh参数  
+			if(isrefresh == 1) {  
+				return;
+			}  
+			window.location.href = 'http://kinhomapp';  
+			window.setTimeout(function () {  
+			     window.location.href += '&refresh=1' // 附加一个特殊参数，用来标识这次刷新不要再调用myapp:// 了  
+			}, 500);  
+         }  
+	} 
 	</script>
 </html>
