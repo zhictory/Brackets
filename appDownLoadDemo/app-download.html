@@ -34,29 +34,33 @@
 	</style>
 </head>
 <body>
-	<div>
-		<a href="jinhaima://kinhomapp">打开app</a><br/>
-	</div>
 	<div id="J_appBanner" class="app-banner">
-		<a class="link-btn" id="applink1" onclick="openApp()">Open</a>
+		<a class="link-btn" id="applink1" onclick="">Open</a>
 	</div>
 </body>
 	<script>
 	if(navigator.userAgent.indexOf("iPhone")>-1&&navigator.userAgent.indexOf("Safari")>-1){
-		document.getElementById("J_appBanner").style.display = "none";
+		// document.getElementById("J_appBanner").style.display = "none";
 	}
 	function openApp() {
-        if (/android/i.test(navigator.userAgent)) {  
-			alert();
-			var isrefresh = getUrlParam('refresh'); // 获得refresh参数  
-			if(isrefresh == 1) {  
-				return;
-			}  
-			window.location.href = 'http://kinhomapp';  
-			window.setTimeout(function () {  
-			     window.location.href += '&refresh=1' // 附加一个特殊参数，用来标识这次刷新不要再调用myapp:// 了  
-			}, 500);  
-         }  
-	} 
+		// window.location.href = 'jinhaima://kinhomapp';//自定义
+		window.location.href = 'http://a.app.qq.com/o/simple.jsp?pkgname=com.bluemobi.jinhaima';//应用宝
+		// window.location.href = 'https://itunes.apple.com/us/app/jin-hai-ma-shang-cheng/id1011663719?l=zh&ls=1&mt=8';//直接跳转应用商店
+	}
+	/*(function() {
+	    var isInstalled,
+	        url = 'jinhaima://kinhomapp', // 找android工程师要吧
+	        script = document.createElement('script');
+	    script.src = url;
+	    script.onload = function() {
+	        alert('Is installed.');
+	        isInstalled = true;
+	    };
+	    script.onerror = function() {
+	        alert('May be not installed.');
+	        isInstalled = false;
+	    }
+	    document.body.appendChild(script);
+	})();*/
 	</script>
 </html>
