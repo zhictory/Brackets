@@ -3,19 +3,30 @@
 <head>
 	<meta charset="UTF-8">
 	<title>jQueryRotate</title>
-	<script src="scripts/jquery.min.js"></script>
-	<script src="scripts/jquery.rotate.min.js"></script>
+	<link rel="stylesheet" href="http://misc.jjcdn.com/p/css/active.css" />
+	<!-- <link rel="stylesheet" href="http://misc.jjcdn.com/p/ac201506.css" /> -->
+    <!--[if lt IE 9]><!-->
+    <script src="http://misc.jjcdn.com/p/js/html5.js"></script>
+    <!--<![endif]-->
 	<style>
+	.start-btn {
+		width: 128px;
+		height: 128px;
+		background-color: #333;
+	}
 	</style>
-	<script>
-	var angle = 0;
-	setInterval(function(){
-	      angle+=3;
-	     $("#img").rotate(angle);
-	},50);
-	</script>
 </head>
 <body>
-	<img id="img" src="images/act-pointer.png"/>
+	<div class="lucky">
+	    <div class="start">
+	        <div class="start-btn" id="J_start"></div>
+	        <div class="pointer" id="J_pointer">
+				<img id="img" src="images/act-pointer.png"/>
+	        </div>
+	    </div>  
+	</div>
 </body>
+	<script src="scripts/jquery.min.js"></script>
+	<script src="scripts/rotate.js"></script>
+	<script src="scripts/index.js"></script>
 </html>
