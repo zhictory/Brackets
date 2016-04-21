@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQueryRotate</title>
+	<script src="scripts/jquery.min.js"></script>
+	<script src="scripts/jquery.rotate.min.js"></script>
+	<style>
+	</style>
+	<script>
+	var angle = 0;
+	setInterval(function(){
+	      angle+=3;
+	     $("#img").rotate(angle);
+	},50);
+	</script>
+</head>
+<body>
+	<img id="img" src="images/act-pointer.png"/>
+</body>
+</html>
