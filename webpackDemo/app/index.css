@@ -12,6 +12,7 @@
   font-size: 30px;
   font-weight: 900;
   font-family: 'Microsoft Yahei';
+  background: url(./img/div_bg.jpg) 0 0 no-repeat;
 }
 .table td div {
   display: none;

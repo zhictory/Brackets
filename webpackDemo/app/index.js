@@ -150,4 +150,4 @@ let directionInGrid = (n, m) => {
 
 }
 
-directionInGrid(2, 7);
+directionInGrid(10, 5);
