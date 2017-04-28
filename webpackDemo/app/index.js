@@ -1,153 +1,109 @@
 import './index.css';
 
-import $ from 'jquery';
+import Vue from 'vue';
 
-let directionInGrid = (n, m) => {
+import './img/6872950.png';
+import './img/div_bg_1.jpg';
+let tplFormPage = require('./tpl/tplFormPage.html');
 
-  const UP = '↑';
-  const DOWN = '↓';
-  const LEFT = '←';
-  const RIGHT = '→';
+new Vue({
+  el: '#header',
+  data: {
+    items: [{
+      name: '关于我',
+      view: 'aboutPage'
+    }, {
+      name: '表单',
+      view: 'formPage'
+    }, {
+      name: '首页',
+      view: 'homePage'
+    }]
+  },
+  methods: {
+    page: function(event) {
+      body.currentView = event.path[1].attributes['data-view'].value;
+    }
+  }
+});
 
-  const MAXN = n;
-  const MAXM = m;
-
-  let oldDirection = UP;
-  let finalDirection = RIGHT;
-  let newDirection = RIGHT;
-  let array = [];
-  let nowX = 0;
-  let nowY = 0;
-
-  let time = 100;
-
-  let creatTable = (n, m) => {
-    $('div').html($('<table class="table"><tbody>'));
-    for (let i = 0; i < n; i++) {
-      let tr = $('<tr>');
-      for (let i = 0; i < m; i++) {
-        tr.append($('<td><div>'));
+let body = new Vue({
+  el: '#body',
+  data: {
+    currentView: 'formPage'
+  },
+  components: {
+    homePage: { template: '<img src="./img/div_bg_1.jpg" alt="">' },
+    formPage: {
+      template: '<form action="">\
+        <div class="form-item">\
+          <div class="form-label">\
+            <label for="username">姓名：</label>\
+          </div>\
+          <div class="form-input">\
+            <input placeholder="2-10位中英文字符" type="text" name="username" v-on:input="validate($event.target)"><i class="ok"></i>\
+            <span class="tips"><i class="error"></i>格式有误</span>\
+          </div>\
+        </div>\
+        <div class="form-item">\
+          <div class="form-label">\
+            <label for="phone">手机：</label>\
+          </div>\
+          <div class="form-input">\
+            <input placeholder="11位数字" type="text" name="phone" v-on:input="validate($event.target)"><i class="ok"></i>\
+            <span class="tips"><i class="error"></i>格式有误</span>\
+          </div>\
+        </div>\
+        <div class="form-item">\
+          <div class="form-label">\
+            <label for="pwd">密码：</label>\
+          </div>\
+          <div class="form-input">\
+            <input placeholder="只包含数字、字母和标点" type="password" name="pwd" v-on:input="validate($event.target)"><i class="ok"></i>\
+            <span class="tips"><i class="error"></i>格式有误</span>\
+          </div>\
+        </div>\
+        <div class="form-item code-item">\
+          <div class="form-label">\
+            <label for="code">验证码：</label>\
+          </div>\
+          <div class="form-input">\
+            <input placeholder="6位数字" type="text" name="code" v-on:input="validate($event.target)"><i class="ok"></i>\
+            <span class="tips"><i class="error"></i>格式有误</span>\
+            <input placeholder="按格式输入" type="button" value="获取验证码">\
+          </div>\
+        </div>\
+        <div class="form-item submit-item">\
+          <div class="form-label">\
+            <label></label>\
+          </div>\
+          <input type="submit" value="提交">\
+        </div>\
+      </form>',
+      methods: {
+        validate: function(target) {
+          switch (target.name) {
+            case 'username':
+              !/^[a-zA-Z0-9]{2,10}$/.test(target.value) ? target.parentNode.querySelector('.tips').style.display = 'block' : target.parentNode.querySelector('.tips').style.display = 'none';
+              break;
+            case 'phone':
+              !/^[0-9]{1,11}$/.test(target.value) ? target.parentNode.querySelector('.tips').style.display = 'block' : target.parentNode.querySelector('.tips').style.display = 'none';
+              break;
+            case 'pwd':
+              !/^.+$/.test(target.value) ? target.parentNode.querySelector('.tips').style.display = 'block' : target.parentNode.querySelector('.tips').style.display = 'none';
+              break;
+            case 'code':
+              !/^[0-9]{6}$/.test(target.value) ? target.parentNode.querySelector('.tips').style.display = 'block' : target.parentNode.querySelector('.tips').style.display = 'none';
+              break;
+            default:
+              break;
+          }
+          if (target.value == '') {
+            target.parentNode.querySelector('.tips').style.display = 'none';
+          }
+        }
       }
-      $('tbody').append(tr);
-    }
-  }
-
-  // 创建二维数组
-  let creatDoubleArr = (n, m) => {
-
-    let array = [];
-    for (let i = 0; i < n; i++) {
-      array[i] = [];
-      for (let j = 0; j < m; j++) {
-        array[i].push('');
-      }
-    }
-    return array;
-
-  }
-
-  let getFinalDirection = (direction) => {
-
-    let i;
-
-    switch (direction) {
-      case UP:
-        i = nowX;
-        for (; i >= 0; i--) {
-          if (array[i][nowY] === '') {
-            array[i][nowY] = UP;
-            $('tr:eq(' + i + ') td:eq(' + nowY + ') div').attr('data-time', time).html(UP);
-            time += 50;
-          } else break;
-        }
-        nowX = ++i;
-        nowY++;
-        oldDirection = finalDirection = UP;
-        break;
-      case RIGHT:
-        i = nowY;
-        for (; i < array[nowX].length; i++) {
-          if (array[nowX][i] === '') {
-            array[nowX][i] = RIGHT;
-            $('tr:eq(' + nowX + ') td:eq(' + i + ') div').attr('data-time', time).html(RIGHT);
-            time += 50;
-          } else break;
-        }
-        nowY = --i;
-        nowX++;
-        oldDirection = finalDirection = RIGHT;
-        break;
-      case DOWN:
-        i = nowX;
-        for (; i < array.length; i++) {
-          if (array[i][nowY] === '') {
-            array[i][nowY] = DOWN;
-            $('tr:eq(' + i + ') td:eq(' + nowY + ') div').attr('data-time', time).html(DOWN);
-            time += 50;
-          } else break;
-        }
-        nowX = --i;
-        nowY--;
-        oldDirection = finalDirection = DOWN;
-        break;
-      case LEFT:
-        i = nowY;
-        for (; i >= 0; i--) {
-          if (array[nowX][i] === '') {
-            array[nowX][i] = LEFT;
-            $('tr:eq(' + nowX + ') td:eq(' + i + ') div').attr('data-time', time).html(LEFT);
-            time += 50;
-          } else break;
-        }
-        nowY = ++i;
-        nowX--;
-        oldDirection = finalDirection = LEFT;
-        break;
-      default:
-        break;
-    }
-
-  }
-
-  array = creatDoubleArr(MAXN, MAXM);
-
-  creatTable(MAXN, MAXM);
-
-  // 数组赋值
-  while (nowX < MAXN && nowX >= 0 && nowY < MAXM && nowY >= 0 && !array[nowX][nowY]) {
-
-    switch (oldDirection) {
-      case UP:
-        newDirection = RIGHT;
-        break;
-      case RIGHT:
-        newDirection = DOWN;
-        break;
-      case DOWN:
-        newDirection = LEFT;
-        break;
-      case LEFT:
-        newDirection = UP;
-        break;
-      default:
-        break;
-    }
-    getFinalDirection(newDirection);
-
-  }
-
-  for (let i = 0; i < MAXN * MAXM; i++) {
-
-    let time = parseInt($('td').eq(i).find('div').attr('data-time'));
-    let div = $('td').eq(i).find('div');
-    setTimeout(function() {
-      div.fadeIn(300);
-    }, time);
-
-  }
-
-  return finalDirection === UP ? 'U' : finalDirection === DOWN ? 'D' : finalDirection === LEFT ? 'L' : 'R';
-
-}
-
-directionInGrid(10, 5);
+    },
+    aboutPage: { template: '<img src="./img/6872950.png" alt="">' }
+  },
+});

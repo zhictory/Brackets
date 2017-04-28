@@ -6,7 +6,22 @@
 <link href="style.css" rel="stylesheet"></head>
 
 <body>
-  <div></div>
+	<section class="wrap">
+	  <div id="header" class="header">
+	  	<h1>vue demo</h1>
+	  	<ul>
+	  		<li v-for="item in items" v-on:click="page" :data-view="item.view"><a href="javascript:void(0)">{{ item.name }}</a></li>
+	  	</ul>
+	  </div>
+	  <div id="body" class="body">
+	  	<body-content :is="currentView"></body-content>
+	  </div>
+	  <div id="footer" class="footer">
+	  	<p>作者： zhangzhensheng</p>
+	  	<p>日期：2017-04-27</p>
+	  	<p>网站：<a href="https://zhictory.github.io/jekyll/">https://zhictory.github.io/jekyll/</a></p>
+	  </div>
+	</section>
 <script type="text/javascript" src="vendor.js"></script><script type="text/javascript" src="main.js"></script></body>
 
 </html>

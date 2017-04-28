@@ -1,0 +1,51 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>webpack 2 demo</title>
+</head>
+
+<body>
+  <div id="example">
+    <p>Original message: "{{ message }}"</p>
+    <p>Computed reversed message: "{{ reversedMessage }}"</p>
+    <my-component></my-component>
+    <my-child my-message="hello!"></my-child>
+    <comp :some-prop="12" initial-counter="1"></comp>
+  </div>
+  <div id="example-2">
+    <input v-model="parentMsg">
+    <br>
+    <child v-bind:my-message="parentMsg"></child>
+  </div>
+  <div id="counter-event-example">
+    <p>{{ total }}</p>
+    <button-counter v-on:increment="incrementTotal"></button-counter>
+    <button-counter v-on:increment="incrementTotal"></button-counter>
+  </div>
+  <div id="example-3">
+	  <currency-input></currency-input>  	
+  </div>
+  <div id="example-4">
+    <h1>我是父组件的标题</h1>
+    <my-component-1>
+      <p>这是一些初始内容</p>
+      <p>这是更多的初始内容</p>
+    </my-component-1>
+  </div>
+  <div id="example-5">
+  	<my-awesome-list :items="items">
+  	  <!-- 作用域插槽也可以是具名的 -->
+  	  <template slot="item" scope="props">
+  	    <li class="my-fancy-item">{{ props.text }}</li>
+  	  </template>
+  	</my-awesome-list>
+  </div>
+  <div id="example-6">
+	  <component :is="currentView">
+	    <!-- 组件在 vm.currentview 变化时改变！ -->
+	  </component>  	
+  </div>
+</body>
+
+</html>
