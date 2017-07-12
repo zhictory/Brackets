@@ -1,26 +1,55 @@
 webpackJsonp([0],[
 /* 0 */,
-/* 1 */,
+/* 1 */
+/***/ (function(module, exports) {
+
+
+
+
+/***/ }),
 /* 2 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 3 */,
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "img/6872950.png";
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "img/div_bg_1.jpg";
+
+/***/ }),
+/* 6 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__index_css__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__index_css__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__index_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__index_css__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__img_6872950_png__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__img_6872950_png__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__img_6872950_png___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__img_6872950_png__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__img_div_bg_1_jpg__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__img_div_bg_1_jpg__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__img_div_bg_1_jpg___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__img_div_bg_1_jpg__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__tpl_tplFormPage_html__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__tpl_tplFormPage_html___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__tpl_tplFormPage_html__);
 
 
 
 
+console.log(__WEBPACK_IMPORTED_MODULE_1_vue___default.a);
 
 
-let tplFormPage = __webpack_require__(6);
+
+
 
 new __WEBPACK_IMPORTED_MODULE_1_vue___default.a({
   el: '#header',
@@ -125,33 +154,5 @@ let body = new __WEBPACK_IMPORTED_MODULE_1_vue___default.a({
 });
 
 
-/***/ }),
-/* 3 */,
-/* 4 */,
-/* 5 */,
-/* 6 */
-/***/ (function(module, exports) {
-
-
-
-
-/***/ }),
-/* 7 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 8 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "img/6872950.png";
-
-/***/ }),
-/* 9 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "img/div_bg_1.jpg";
-
 /***/ })
-],[2]);
+],[6]);

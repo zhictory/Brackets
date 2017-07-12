@@ -4,7 +4,7 @@ import Vue from 'vue';
 
 import './img/6872950.png';
 import './img/div_bg_1.jpg';
-let tplFormPage = require('./tpl/tplFormPage.html');
+import tplFormPage from './tpl/tplFormPage.html';
 
 new Vue({
   el: '#header',
