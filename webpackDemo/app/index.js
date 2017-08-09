@@ -10,7 +10,7 @@ new Vue({
   el: '#header',
   data: {
     items: [{
-      name: '关于我',
+      name: '关于我们',
       view: 'aboutPage'
     }, {
       name: '表单',

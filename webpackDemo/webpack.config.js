@@ -1,12 +1,16 @@
 const webpack = require('webpack');
+const WebpackDevServer = require('webpack-dev-server');
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const compiler = webpack({
+const config = {
   entry: {
-    main: './app/index.js',
+    main: ['webpack-dev-server/client?http://localhost:8080/', './app/index.js'],
     vendor: ['jquery', 'vue']
+  },
+  devServer: {
+    contentBase: './dist'
   },
   output: {
     filename: '[name].js',
@@ -25,7 +29,15 @@ const compiler = webpack({
       })
     }, {
       test: /\.(png)|(jpg)$/,
-      use: 'url-loader?name=img/[name].[ext]&limit=5000'
+      use: [
+        {
+          loader: 'url-loader',
+          options: {
+            name: 'img/[name].[ext]',
+            limit: 5000
+          }
+        }
+      ]
     }]
   },
   plugins: [
@@ -35,16 +47,15 @@ const compiler = webpack({
     }),
     new HtmlWebpackPlugin({
       template: './app/index.html'
-    })
+    }),
+    new webpack.HotModuleReplacementPlugin()
   ]
+};
+
+var compiler = webpack(config);
+
+var server = new WebpackDevServer(compiler, {
+  contentBase: 'dist/'
 });
 
-const watching = compiler.watch({
-
-}, (err, stats) => {
-  if (err || stats.hasErrors()) {
-  }
-  process.stdout.write(stats.toString({
-
-  } + '/n'))
-})
+server.listen(8080);
