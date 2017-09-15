@@ -6,9 +6,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const config = {
   entry: {
-    main: ['webpack-dev-server/client?http://localhost:8080/', './app/index.js'],
+    main: ['webpack-dev-server/client?http://localhost:8080/', 'webpack/hot/dev-server', './app/index.js'],
     vendor: ['jquery', 'vue']
   },
+  devtool: 'inline-source-map',
   devServer: {
     contentBase: './dist'
   },

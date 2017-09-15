@@ -1,0 +1,258 @@
+/* 清除浮动 */
+.clearfix {
+  *zoom: 1;
+}
+.clearfix:after {  
+  content: "";  
+  display: table;  
+  line-height: 0;  
+  clear: both; 
+}
+
+.groupbuy {
+  margin: 0 auto;
+  padding-top: 3.4rem;
+  padding-bottom: .5rem;
+  max-width: 7.5rem;
+  background: #fa9c9c url(./img/bg.png) center 0 no-repeat;
+  background-size: 100%;
+}
+.groupbuy__tips {
+  margin-top: .5rem;
+  max-width: 7.5rem;
+  height: 0.7rem;
+  line-height: 0.7rem;
+  background: #fee662;
+  font-size: 0.24rem;
+  text-indent: 1em;
+}
+.groupbuy__men {
+  box-sizing: border-box;
+  box-shadow: 0 0 .2rem #333;
+  margin: .2rem auto 0;
+  padding: .2rem;
+  width: 6.5rem;
+  border-radius: .06rem;
+  background: #fee662;
+}
+.group__item {
+  box-sizing: border-box;
+  border-radius: .74rem;
+  margin-bottom: .2rem;
+  background: #fff;
+  overflow: hidden;
+}
+.group__item:last-child {
+  margin-bottom: 0;
+}
+.group__portrait {
+  float: left;
+  border-radius: 50%;
+  margin: .05rem 0 .05rem .05rem;
+  width: .9rem;
+  height: .9rem;
+  overflow: hidden;
+}
+.group__portrait img {
+  width: 100%;
+  height: 100%;
+  vertical-align: bottom;
+}
+.group__detail {
+  float: left;
+  margin-left: .05rem;
+  box-sizing: border-box;
+  padding: 0 .1rem;
+  width: 3.8rem;
+  font-size: 0.2rem;
+}
+.group__detail p {
+  overflow: hidden;
+}
+.group__detail p:first-child {
+  font-size: 0.24rem;
+  line-height: 0.6rem;
+}
+.group__detail .left {
+  float: left;
+}
+.group__detail .right {
+  float: right;
+}
+.group__link {
+  float: right;
+  border-top-right-radius: .74rem;
+  border-bottom-right-radius: .74rem;
+  width: 1.2rem;
+  height: 1rem;
+  line-height: 1rem;
+  color: #fff;
+  text-align: center;
+}
+.group__item--off .group__link {
+  background: #a9a9a9;
+}
+.group__item--off {
+  color: #a9a9a9;
+}
+.group__item--on {
+  color: #fa9c9c;
+}
+.group__item--on .group__link {
+  background: #fa9c9c;
+}
+.shop {
+  display: flex;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: .1rem;
+  width: 6rem;
+  border-radius: .06rem;
+  background: #fa9c9c;
+}
+.shop__portrait {
+  float: left;
+  box-sizing: border-box;
+  padding: .05rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: #fef7ae;
+}
+.shop__portrait img {
+  width: 100%;
+  height: 100%;
+  vertical-align: bottom;
+}
+.shop__detail {
+  flex: 1;
+  float: right;
+  box-sizing: border-box;
+  padding: 0 .1rem 0 .2rem;
+  width: 3.8rem;
+}
+.shop__tt {
+  margin-top: .1rem;
+  font-size: 0.3rem;
+  color: #333;
+  line-height: 0.3rem;
+}
+.shop__tips {
+  margin: .2rem 0;
+  font-size: .24rem;
+  color: #333;
+  line-height: .24rem;
+}
+.shop__price {
+  float: left;
+  padding: .03rem;
+  border-radius: .25rem;
+  vertical-align: middle;
+  background: #fff;
+  font-size: 0.24rem;
+  color: #333;
+  line-height: .36rem;
+}
+.shop__price-1 {
+  float: left;
+  padding: 0 .1rem;
+  border-top-left-radius: .24rem;
+  border-bottom-left-radius: .24rem;
+  background: #fff;
+  vertical-align: middle;
+}
+.shop__price-2 {
+  float: right;
+  padding: 0 .1rem;
+  height: 100%;
+  border-top-right-radius: .24rem;
+  border-bottom-right-radius: .24rem;
+  background: #fa9c9c;
+  vertical-align: middle;
+}
+.shop__link {
+  float: right;
+  font-size: 0.24rem;
+  color: #fef7ae;
+  vertical-align: middle;
+}
+.groupbuy__msg {
+  box-sizing: border-box;
+  padding: 0 .5rem;
+  margin-top: 1rem;
+  color: #fff;
+  text-align: center;
+  font-size: 0.3rem;
+  line-height: .4rem;
+  text-shadow: 0 0 .1rem #333;
+}
+.groupbuy__msg-1 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.groupbuy__msg-2 {
+  font-size: 0.24rem;
+  text-align: right;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.hr {
+  margin: 1rem 0;
+  border-color: #fff;
+}
+.groupbuy__btn {
+  margin: 0 auto;
+  display: block;
+  border-radius: .5rem;
+  width: 5rem;
+  height: 1rem;
+  line-height: 1rem;
+  background: #fee662;
+  font-size: 0.46rem;
+  color: #e90715;
+  text-align: center;
+  box-shadow: 0 .05rem #be7824;
+}
+.groupbuy__btn:active {
+  position: relative;
+  top: .05rem;
+  box-shadow: 0 0 #be7824;
+}
+.groupbuy__rules {
+  box-sizing: border-box;
+  padding: 0 .5rem;
+  margin-top: .5rem;
+  color: #fff;
+  font-size: 0.24rem;
+}
+.groupbuy__rules h4 {
+  line-height: 0.6rem;
+  font-size: 0.3rem;
+  text-align: center;
+}
+.groupbuy__rules h4:before,
+.groupbuy__rules h4:after {
+  content: ' ';
+  display: inline-block;
+  margin: 0 .2rem;
+  vertical-align: middle;
+  width: 1rem;
+  height: 1px;
+  background: #fff;
+}
+.groupbuy__rules p {
+  line-height: 0.6rem;
+  text-align: left;
+}
+.groupbuy__more {
+  margin: .5rem auto;
+  width: 0.2rem;
+}
+.groupbuy__more li {
+  margin-bottom: .1rem;
+  width: 0.2rem;
+  height: 0.2rem;
+  border-radius: 50%;
+  background: #fff;
+}

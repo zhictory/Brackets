@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <!-- 引入头部资源 -->
+  <meta charset="UTF-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <!-- 是否启用 WebApp 全屏模式 -->
+  <meta name="format-detection" content="telephone=no, email=no" />
+  <!-- 不自动识别手机号码和email -->
+  <meta name="HandheldFriendly" content="true">
+  <!-- 兼容老式浏览器,如黑莓等 -->
+  <meta name="screen-orientation" content="portrait">
+  <!-- uc强制竖屏 -->
+  <meta name="full-screen" content="yes">
+  <!-- uc强制全屏 -->
+  <meta name="browsermode" content="application">
+  <!-- uc应用模式 -->
+  <meta name="x5-orientation" content="portrait">
+  <!-- QQ强制竖屏 -->
+  <meta name="x5-fullscreen" content="true">
+  <!-- QQ强制全屏 -->
+  <meta name="x5-page-mode" content="app">
+  <!-- QQ应用模式 -->
+
+  <script>
+    ; (function () {
+      var clientWidth = document.documentElement.clientWidth;
+      if (clientWidth > 750) { clientWidth = 750 }
+      document.getElementsByTagName("html")[0].style.fontSize = clientWidth / 7.5 + "px";
+    })();
+  </script>
+  <link rel="stylesheet" href="./base.css">
+  <link rel="stylesheet" href="./h5.css">
+  <title>拼团</title>
+</head>
+
+<body>
+<section class="groupbuy">
+  <dl class="shop clearfix">
+    <dt class="shop__portrait"><img src="./img/qiu.jpg" alt=""></dt>
+    <dd class="shop__detail">
+      <h4 class="shop__tt">爽嘴猴</h4>
+      <p class="shop__tips">单独购买价 60.00 元（累计销售 1）</p>
+      <div><span class="shop__price"><span class="shop__price-1">团长价</span><span class="shop__price-2">&yen;100.00</span></span><a class="shop__link" href="">进店逛逛 ></a></div>
+    </dd>
+  </dl>
+  <div class="groupbuy__tips">您的小伙伴正在发起团购，您可直接参团！</div>
+  <div class="groupbuy__men">
+    <ul class="group__list">
+      <li class="group__item group__item--off">
+        <div class="group__portrait"><img src="./img/qiu.jpg" alt=""></div>
+        <div class="group__detail">
+          <p><span class="left">翁总</span><span class="right">开团团长</span></p>
+          <p><span class="left">09-15 17:03 开团</span><span class="right">价格 &yen;10.00</span></p>
+        </div>
+        <span class="group__link">已开团</span>
+      </li>
+      <li class="group__item group__item--on">
+        <div class="group__portrait"><img src="./img/qiu.jpg" alt=""></div>
+        <div class="group__detail">
+          <p><span class="left">虚位以待</span><span class="right">2人团价</span></p>
+          <p><span class="left">等你开团</span><span class="right">价格 &yen;5.00</span></p>
+        </div>
+        <a class="group__link" href="">趣开团</a>
+      </li>
+    </ul>
+  </div>
+  <ul class="groupbuy__more"><li></li><li></li><li></li></ul>
+  <div class="groupbuy__msg">
+    <p class="groupbuy__msg-1">我也是朋友推荐过去的，不二之选</p>
+    <p class="groupbuy__msg-2">——来自任性的小伙伴</p>
+  </div>
+  <hr class="hr">
+  <a class="groupbuy__btn">立即参团</a>
+  <div class="groupbuy__rules">
+    <h4>活动规则</h4>
+    <p>1. 本次活动吧啦吧啦吧啦；</p>
+    <p>2. 本次返现吧啦吧啦吧啦吧啦吧啦吧啦吧啦吧啦吧啦；</p>
+    <p>3. 本活动最终解释权归。</p>
+  </div>
+</section>
+</body>
+<script src="./h5.js"></script>
+
+</html>

@@ -5,6 +5,7 @@ import Vue from 'vue';
 import './img/6872950.png';
 import './img/div_bg_1.jpg';
 import tplFormPage from './tpl/tplFormPage.html';
+import './print.js';
 
 new Vue({
   el: '#header',
